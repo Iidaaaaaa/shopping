@@ -5,7 +5,7 @@ import CheckIn from "../components/Checkin";
 import Setting from "../components/setting";
 import Search from "../components/Search";
 import InfoArt from "../components/InfoArt";
-import CustomMenuLayout from "../components/CustomMenuLayout";
+import AdminLayout from "../components/AdminLayout";
 
 const MenuLayout = ({ userInfo }) => {
   const [currentPage, setCurrentPage] = useState("menu");
@@ -21,7 +21,7 @@ const MenuLayout = ({ userInfo }) => {
       case "search":
         return <Search setCurrentPage={setCurrentPage} />;
       case "admin":
-        return <CustomMenuLayout setCurrentPage={setCurrentPage} />;
+        return <AdminLayout setCurrentPage={setCurrentPage} />;
       case "Article":
         return <InfoArt setCurrentPage={setCurrentPage} />;
       default:

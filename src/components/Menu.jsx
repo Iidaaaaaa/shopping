@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import MenuItem from "../components/MenuItem";
-import CustomMenuLayout from "../components/CustomMenuLayout";
+import CustomMenuLayout from "./AdminLayout";
 
 const allowedEmails = [
   "okiyamafirebaseservice@gmail.com",
@@ -52,7 +52,7 @@ const Menu = ({ setCurrentPage, userInfo }) => {
       </div>
       {/* 管理者ページのコンテンツ */}
       {allowedEmails.includes(userInfo.email) && setCurrentPage === "admin" && (
-        <CustomMenuLayout />
+        <AdminLayout />
       )}
     </div>
   );

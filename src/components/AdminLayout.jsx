@@ -3,7 +3,7 @@ import { db, storage } from "/firebaseConfig"; // FirestoreとStorageのイン�
 import { collection, setDoc, doc } from "firebase/firestore"; // Firestoreの関数をインポート
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage"; // Storageの関数をインポート
 
-const CustomMenuLayout = ({ setCurrentPage }) => {
+const AdminLayout = ({ setCurrentPage }) => {
   const [storeName, setStoreName] = useState("");
   const [image, setImage] = useState(null);
   const [description, setDescription] = useState("");
@@ -112,4 +112,4 @@ const CustomMenuLayout = ({ setCurrentPage }) => {
   );
 };
 
-export default CustomMenuLayout;
+export default AdminLayout;
