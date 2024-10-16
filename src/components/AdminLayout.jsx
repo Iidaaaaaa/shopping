@@ -53,24 +53,30 @@ const AdminLayout = ({ setCurrentPage }) => {
             className="pt-14 pb-3 flex "
           >
             <img src="/public/images/angle-left.svg" alt="右矢印" />
-            <p className=" mx-auto text-white">管理者限定のページです。</p>
+            <p className=" mx-auto text-white ">管理者</p>
           </div>
         </div>
       </div>
       <div className="mt-10 mx-auto max-w-xs">
-        <h1 className="text-2xl">ランキングを追加する</h1>
+        <h1 className="text-2xl text-center mb-2  ">商店街を追加する</h1>
         <form onSubmit={handleSubmit}>
-          <div>
-            <label>店舗名:</label>
+          <div class="flex flex-col">
+            <label class="bg-customBg text-white px-4 py-1 rounded-full mr-2 mb-2 w-fit ">
+              商店街名
+            </label>
+
             <input
-              className="bg-black text-white"
+              class="bg-black text-white"
               type="text"
               value={storeName}
               onChange={(e) => setStoreName(e.target.value)}
             />
           </div>
+
           <div>
-            <label>画像:</label>
+            <label class="bg-customBg text-white px-4 py-1 rounded-full mr-2 mb-2 w-fit">
+              画像:
+            </label>
             <input
               className="bg-black text-white"
               type="file"
