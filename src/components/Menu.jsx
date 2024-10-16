@@ -2,6 +2,10 @@ import React, { useState } from "react";
 import MenuItem from "../components/MenuItem";
 import CustomMenuLayout from "../components/CustomMenuLayout";
 
+const allowedEmails = [
+  "okiyamafirebaseservice@gmail.com",
+  "naotookiyama@gmail.com",
+];
 const Menu = ({ setCurrentPage, userInfo }) => {
   return (
     <div className="font-notosansjp">
@@ -36,18 +40,18 @@ const Menu = ({ setCurrentPage, userInfo }) => {
           ItemSrc="/public/images/glass.svg"
           ItemAlt="探す"
         />
-        {userInfo.email === "okiyamafirebaseservice@gmail.com" &&
-          "naotookiyama@gmail.com"(
-            <MenuItem
-              onClick={() => setCurrentPage("admin")}
-              ItemSrc="/public/images/gear.svg"
-              ItemAlt="管理者"
-            />
-          )}
+        {allowedEmails.includes(userInfo.email) && (
+          <MenuItem
+            onClick={() => setCurrentPage("admin")}
+            ItemSrc="/public/images/gear.svg"
+            ItemAlt="管理者"
+          />
+        )}
       </div>
       {/* 管理者ページのコンテンツ */}
-      {userInfo.email === "okiyamafirebaseservice@gmail.com" &&
-        setCurrentPage === "admin" && <CustomMenuLayout />}
+      {allowedEmails.includes(userInfo.email) && setCurrentPage === "admin" && (
+        <CustomMenuLayout />
+      )}
     </div>
   );
 };
