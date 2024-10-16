@@ -5,6 +5,7 @@ import CustomMenuLayout from "../components/CustomMenuLayout";
 const allowedEmails = [
   "okiyamafirebaseservice@gmail.com",
   "naotookiyama@gmail.com",
+  "sasarayamauchi8@gmail.com",
 ];
 const Menu = ({ setCurrentPage, userInfo }) => {
   return (
