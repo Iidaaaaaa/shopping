@@ -13,9 +13,8 @@ const GoogleLoginButton = ({ setCurrentPage, setUserInfo }) => {
       console.log(user);
 
       // Firestoreにユーザー情報を保存
-      await setDoc(doc(db, "users", user.uid), {
+      await setDoc(doc(db, "users", user.displayName), {
         name: user.displayName,
-        age: null, // 年齢は手動で設定する必要があります
         address: user.email,
         icon: user.photoURL,
       });
@@ -23,7 +22,6 @@ const GoogleLoginButton = ({ setCurrentPage, setUserInfo }) => {
       // ユーザー情報を保存
       setUserInfo({
         name: user.displayName,
-        age: null, // 年齢は手動で設定する必要があります
         address: user.email,
         icon: user.photoURL,
         email: user.email, // emailを追加

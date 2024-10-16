@@ -36,13 +36,14 @@ const Menu = ({ setCurrentPage, userInfo }) => {
           ItemSrc="/public/images/glass.svg"
           ItemAlt="探す"
         />
-        {userInfo.email === "okiyamafirebaseservice@gmail.com" && (
-          <MenuItem
-            onClick={() => setCurrentPage("admin")}
-            ItemSrc="/public/images/gear.svg"
-            ItemAlt="管理者"
-          />
-        )}
+        {userInfo.email === "okiyamafirebaseservice@gmail.com" &&
+          "naotookiyama@gmail.com"(
+            <MenuItem
+              onClick={() => setCurrentPage("admin")}
+              ItemSrc="/public/images/gear.svg"
+              ItemAlt="管理者"
+            />
+          )}
       </div>
       {/* 管理者ページのコンテンツ */}
       {userInfo.email === "okiyamafirebaseservice@gmail.com" &&
