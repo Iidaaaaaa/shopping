@@ -5,8 +5,8 @@ import CustomMenuLayout from "../components/CustomMenuLayout";
 const Menu = ({ setCurrentPage, userInfo }) => {
   return (
     <div className="font-notosansjp">
-      <div className="bg-slate-200 w-full h-48 relative">
-        <div className="max-w-24 max-h-24 absolute top-36 left-40">
+      <div className="relative w-full h-48 bg-slate-200">
+        <div className="absolute max-w-24 max-h-24 top-36 left-40">
           <img
             className="rounded-full"
             src="/public/images/icon.png"
@@ -14,8 +14,8 @@ const Menu = ({ setCurrentPage, userInfo }) => {
           />
         </div>
       </div>
-      <div className="mt-16 max-w-xs mx-auto ">
-        <h2 className="text-center mx-auto text-2xl mb-9">ハヤト</h2>
+      <div className="max-w-xs mx-auto mt-16 ">
+        <h2 className="mx-auto text-2xl text-center mb-9">ハヤト</h2>
         <MenuItem
           onClick={() => setCurrentPage("checkin")}
           ItemSrc="/public/images/location.svg"

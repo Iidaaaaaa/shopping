@@ -1,5 +1,10 @@
 import { initializeApp } from "firebase/app";
-import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import {
+  getAuth,
+  GoogleAuthProvider,
+  signInWithPopup,
+  signInWithRedirect,
+} from "firebase/auth";
 import {
   getFirestore,
   doc,
@@ -31,6 +36,7 @@ export {
   auth,
   provider,
   signInWithPopup,
+  signInWithRedirect,
   db,
   doc,
   getDoc,
