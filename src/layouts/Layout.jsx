@@ -6,7 +6,6 @@ import MenuLayout from "./MenuLayout";
 import Trending from "../components/Trending";
 import ScanLayout from "./ScanLayout";
 import Toplogin from "../components/Toplogin";
-
 const Layouts = () => {
   const [currentPage, setCurrentPage] = useState("Toplogin");
   const [userInfo, setUserInfo] = useState({

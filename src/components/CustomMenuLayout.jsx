@@ -1,11 +1,12 @@
 import React, { useState } from "react";
-import { db, storage } from "/firebaseConfig"; // FirestoreとStorageのインポート
-import { collection, setDoc, doc } from "firebase/firestore"; // Firestoreの関数をインポート
-import { ref, uploadBytes, getDownloadURL } from "firebase/storage"; // Storageの関数をインポート
+import { db, storage } from "/firebaseConfig";
+import { collection, setDoc, doc } from "firebase/firestore";
+import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 
 const CustomMenuLayout = ({ setCurrentPage }) => {
   const [storeName, setStoreName] = useState("");
   const [image, setImage] = useState(null);
+  const [imagePreview, setImagePreview] = useState(null); // プレビュー用のステートを追加
   const [description, setDescription] = useState("");
   const [tag1, setTag1] = useState("");
   const [tag2, setTag2] = useState("");
@@ -14,7 +15,6 @@ const CustomMenuLayout = ({ setCurrentPage }) => {
     e.preventDefault();
 
     try {
-      // 画像をFirebase Storageにアップロード
       let imageUrl = "";
       if (image) {
         const imageRef = ref(storage, `images/${image.name}`);
@@ -22,88 +22,132 @@ const CustomMenuLayout = ({ setCurrentPage }) => {
         imageUrl = await getDownloadURL(imageRef);
       }
 
-      // Firestoreにデータを保存
       await setDoc(doc(db, "stores", storeName), {
         storeName,
         imageUrl,
         description,
-        tags: [tag1.trim(), tag2.trim()].filter((tag) => tag), // タグを配列に変換し、空のタグを除外
+        tags: [tag1.trim(), tag2.trim()].filter((tag) => tag),
       });
 
-      // フォームのリセット
       setStoreName("");
       setImage(null);
+      setImagePreview(null); // プレビューをリセット
       setDescription("");
       setTag1("");
       setTag2("");
 
-      // ページを変更
       setCurrentPage("Ranking");
     } catch (error) {
       console.error("Error adding document: ", error);
     }
   };
 
+  const handleFileChange = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      setImage(file);
+      setImagePreview(URL.createObjectURL(file)); // プレビュー画像をセット
+    } else {
+      setImage(null);
+      setImagePreview(null);
+    }
+  };
+
   return (
-    <div>
-      <div className="bg-customBg w-full">
+    <div className="min-h-screen bg-white">
+      <div className="w-full bg-customBg">
         <div className="max-w-xs mx-auto">
           <div
-            onClick={() => setCurrentPage("CheckInfo")}
-            className="pt-14 pb-3 flex "
+            onClick={() => setCurrentPage("Menu")}
+            className="flex pb-3 pt-14"
           >
             <img src="/public/images/angle-left.svg" alt="右矢印" />
-            <p className=" mx-auto text-white">管理者限定のページです。</p>
+            <p className="mx-auto text-white">管理者ページ</p>
           </div>
         </div>
       </div>
-      <div className="mt-10 mx-auto max-w-xs">
-        <h1 className="text-2xl">ランキングを追加する</h1>
-        <form onSubmit={handleSubmit}>
+
+      {/* フォーム入力エリア */}
+      <div className="max-w-xs mx-auto mt-20">
+        <form onSubmit={handleSubmit} className="space-y-4">
+          {/* 画像選択 */}
+          <div className="text-center">
+            <div className="relative flex flex-col items-center justify-center w-full h-40 bg-[#d9d9d9] rounded cursor-pointer">
+              <input
+                id="file-upload"
+                type="file"
+                onChange={handleFileChange}
+                className="hidden"
+              />
+              <label
+                htmlFor="file-upload"
+                className="absolute inset-0 flex flex-col items-center justify-center"
+              >
+                {imagePreview ? (
+                  <img
+                    src={imagePreview}
+                    alt="プレビュー画像"
+                    className="object-cover w-full h-full rounded"
+                  />
+                ) : (
+                  <>
+                    <img
+                      src="/public/images/imageSelect.svg"
+                      alt="画像アイコン"
+                      className="w-12 h-12 mb-2"
+                    />
+                    <p className="text-white">画像を選択</p>
+                  </>
+                )}
+              </label>
+            </div>
+          </div>
+
+          {/* 店舗名入力 */}
           <div>
-            <label>店舗名:</label>
+            <label className="block text-gray-700">商店街名</label>
             <input
-              className="bg-black text-white"
+              className="w-full p-2 bg-gray-100 border border-gray-300 rounded"
               type="text"
               value={storeName}
               onChange={(e) => setStoreName(e.target.value)}
             />
           </div>
+
+          {/* 説明入力 */}
           <div>
-            <label>画像:</label>
-            <input
-              className="bg-black text-white"
-              type="file"
-              onChange={(e) => setImage(e.target.files[0])}
-            />
-          </div>
-          <div>
-            <label>文章:</label>
+            <label className="block text-gray-700">商店街説明文</label>
             <textarea
-              className="bg-black text-white"
+              className="w-full p-2 bg-gray-100 border border-gray-300 rounded"
               value={description}
               onChange={(e) => setDescription(e.target.value)}
             />
           </div>
-          <div>
-            <label>タグ1:</label>
-            <input
-              className="bg-black text-white"
-              type="text"
-              value={tag1}
-              onChange={(e) => setTag1(e.target.value)}
-            />
+
+          {/* タグ入力 */}
+          <div className="flex space-x-2">
+            <div className="w-1/2">
+              <label className="block text-gray-700">タグ1</label>
+              <input
+                className="w-full p-2 bg-gray-100 border border-gray-300 rounded"
+                type="text"
+                value={tag1}
+                onChange={(e) => setTag1(e.target.value)}
+              />
+            </div>
+            <div className="w-1/2">
+              <label className="block text-gray-700">タグ2</label>
+              <input
+                className="w-full p-2 bg-gray-100 border border-gray-300 rounded"
+                type="text"
+                value={tag2}
+                onChange={(e) => setTag2(e.target.value)}
+              />
+            </div>
           </div>
-          <div>
-            <label>タグ2:</label>
-            <input
-              className="bg-black text-white"
-              type="text"
-              value={tag2}
-              onChange={(e) => setTag2(e.target.value)}
-            />
-          </div>
-          <button className="border bg-black" type="submit">
+
+          {/* 送信ボタン */}
+          <button className="w-full py-2 font-semibold text-white bg-gray-800 rounded hover:bg-gray-700">
             送信
           </button>
         </form>

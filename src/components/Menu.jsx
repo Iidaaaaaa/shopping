@@ -14,13 +14,15 @@ const Menu = ({ setCurrentPage, userInfo }) => {
         <div className="absolute max-w-24 max-h-24 top-36 left-40">
           <img
             className="rounded-full"
-            src="/public/images/icon.png"
+            src={userInfo.photoURL || "/public/images/icon.png"}
             alt="icon"
           />
         </div>
       </div>
       <div className="max-w-xs mx-auto mt-16 ">
-        <h2 className="mx-auto text-2xl text-center mb-9">ハヤト</h2>
+        <h2 className="mx-auto text-2xl text-center mb-9">
+          {userInfo ? userInfo.displayName : "名前がないよ"}
+        </h2>
         <MenuItem
           onClick={() => setCurrentPage("checkin")}
           ItemSrc="/public/images/location.svg"
