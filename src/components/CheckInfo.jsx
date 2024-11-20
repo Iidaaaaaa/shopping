@@ -3,14 +3,14 @@ import InfoContent from "./InfoContent";
 const CheckInfo = ({ setCurrentPage }) => {
   return (
     <div>
-      <div className="bg-customBg w-full">
+      <div className="w-full bg-customBg">
         <div className="max-w-xs mx-auto">
           <div
             onClick={() => setCurrentPage("Menu")}
-            className="pt-14 pb-3 flex"
+            className="flex pb-3 pt-14"
           >
-            <img src="/public/images/angle-left.svg" alt="右矢印" />
-            <p className=" mx-auto text-white">お知らせ</p>
+            <img src="./images/angle-left.svg" alt="右矢印" />
+            <p className="mx-auto text-white ">お知らせ</p>
           </div>
         </div>
       </div>

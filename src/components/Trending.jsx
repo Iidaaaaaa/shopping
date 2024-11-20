@@ -27,11 +27,7 @@ const Trending = () => {
       <div className="w-full bg-customBg">
         <div className="max-w-xs mx-auto">
           <div className="flex items-center pb-3 mx-auto pt-14 w-fit">
-            <img
-              className="mr-1"
-              src="/public/images/trending.svg"
-              alt="右矢印"
-            />
+            <img className="mr-1" src="./images/Trending.svg" alt="右矢印" />
             <p className="text-white">急上昇</p>
           </div>
         </div>

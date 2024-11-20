@@ -26,23 +26,23 @@ const RankingAll = () => {
 
   const secondRankUser = {
     name: "適当たろうくん",
-    photoURL: "/public/images/icon.png",
+    photoURL: "./images/icon.png",
     scanCount: 6,
   };
 
   const thirdRankUser = {
     name: "＼(^o^)／",
-    photoURL: "/public/images/icon.png",
+    photoURL: "./images/icon.png",
     scanCount: 4,
   };
 
   return (
-    <div className="mb-40 max-w-xs mx-auto">
+    <div className="max-w-xs mx-auto mb-40">
       <div className="bg-gradient-to-l from-[#eca95a] to-[#da390d] shadow-inner shadow-gray-300 px-2 rounded-lg mt-5">
         <div className="pt-2 pb-2">
           <RankingIcon color="#fbe097" width={41} height={41} />
         </div>
-        <ul id="dataList" className="mx-3 pb-5">
+        <ul id="dataList" className="pb-5 mx-3">
           <RankingUser
             user={secondRankUser}
             textColor="text-white"
@@ -51,7 +51,7 @@ const RankingAll = () => {
             imgStyle="w-12 h-12"
             nameStyle="text-sm w-24"
             countStyle="text-3xl"
-            iconSrc={"/public/images/crown.svg"}
+            iconSrc={"./images/crown.svg"}
             h1Margin={"mr-4"}
           />
         </ul>
@@ -62,7 +62,7 @@ const RankingAll = () => {
         <div className="pt-2 pb-2">
           <RankingIcon color="#f4ae7e" width={24} height={24} />
         </div>
-        <ul id="dataList" className="mx-3 pb-5">
+        <ul id="dataList" className="pb-5 mx-3">
           <RankingUser
             user={secondRankUser}
             index={1}
@@ -70,7 +70,7 @@ const RankingAll = () => {
             imgStyle="w-12 h-12"
             nameStyle="text-sm w-24"
             countStyle="text-3xl"
-            iconSrc="/public/images/walk2.svg"
+            iconSrc="./images/walk2.svg"
             h1Margin={"mr-4"}
           />
         </ul>
@@ -81,7 +81,7 @@ const RankingAll = () => {
         <div className="pt-2 pb-2">
           <RankingIcon color="#f3c42c" width={24} height={24} />
         </div>
-        <ul id="dataList" className="mx-3 pb-5">
+        <ul id="dataList" className="pb-5 mx-3">
           <RankingUser
             user={thirdRankUser}
             index={2}
@@ -89,7 +89,7 @@ const RankingAll = () => {
             imgStyle="w-12 h-12"
             nameStyle="text-sm w-24"
             countStyle="text-3xl"
-            iconSrc="/public/images/walk2.svg"
+            iconSrc="./images/walk2.svg"
             h1Margin={"mr-4"}
           />
         </ul>
@@ -100,20 +100,20 @@ const RankingAll = () => {
             <li className="flex items-center py-3 text-xl">
               <h1 className="text-[#513c38] w-3 text-xl mr-4">{index + 4}</h1>
               <img
-                src="/public/images/icon.png"
+                src="./images/icon.png"
                 alt={user.name}
-                className="rounded-full w-12 h-12 mr-4"
+                className="w-12 h-12 mr-4 rounded-full"
               />
               <p className="text-[#513c38] mr-12 whitespace-nowrap overflow-hidden overflow-ellipsis text-sm w-24">
                 {user.name}
               </p>
               <div className="text-[#513c38] flex items-center mr-2 text-3xl">
                 <img
-                  src="/public/images/walk2.svg"
+                  src="./images/walk2.svg"
                   alt="Walk Icon"
                   className="mr-2"
                 />
-                <p className="text-3xl pr-2">{user.scanCount}</p>
+                <p className="pr-2 text-3xl">{user.scanCount}</p>
               </div>
             </li>
           </ul>
@@ -125,20 +125,20 @@ const RankingAll = () => {
             <li className="flex items-center py-3 text-xl">
               <h1 className="text-[#513c38] w-3 text-xl mr-4">{index + 5}</h1>
               <img
-                src="/public/images/icon.png"
+                src="./images/icon.png"
                 alt={user.name}
-                className="rounded-full w-12 h-12 mr-4"
+                className="w-12 h-12 mr-4 rounded-full"
               />
               <p className="text-[#513c38] mr-12 whitespace-nowrap overflow-hidden overflow-ellipsis text-sm w-24">
                 {user.name}
               </p>
               <div className="text-[#513c38] flex items-center mr-2 text-3xl">
                 <img
-                  src="/public/images/walk2.svg"
+                  src="./images/walk2.svg"
                   alt="Walk Icon"
                   className="mr-2"
                 />
-                <p className="text-3xl pr-2">{user.scanCount}</p>
+                <p className="pr-2 text-3xl">{user.scanCount}</p>
               </div>
             </li>
           </ul>

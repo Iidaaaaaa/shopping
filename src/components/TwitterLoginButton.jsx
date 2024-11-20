@@ -29,7 +29,7 @@ const TwitterLoginButton = ({ setCurrentPage, setUserInfo }) => {
   return (
     <TopBtn
       BtnText={"X(旧Twitter)でログイン"}
-      AppImage={"/public/images/twitter.svg"}
+      AppImage={"./images/twitter.svg"}
       onClick={handleTwitterLogin}
     />
   );

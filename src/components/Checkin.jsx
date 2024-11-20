@@ -59,7 +59,7 @@ const CheckIn = ({ setCurrentPage }) => {
             onClick={() => setCurrentPage("Menu")}
             className="flex pb-3 pt-14 "
           >
-            <img src="/public/images/angle-left.svg" alt="左矢印" />
+            <img src="./images/angle-left.svg" alt="左矢印" />
             <p className="mx-auto text-white">チェックイン管理</p>
           </div>
         </div>

@@ -14,7 +14,7 @@ const Menu = ({ setCurrentPage, userInfo }) => {
         <div className="absolute max-w-24 max-h-24 top-36 left-40">
           <img
             className="rounded-full"
-            src={userInfo.photoURL || "/public/images/icon.png"}
+            src={userInfo.photoURL || "./images/icon.png"}
             alt="icon"
           />
         </div>
@@ -25,28 +25,28 @@ const Menu = ({ setCurrentPage, userInfo }) => {
         </h2>
         <MenuItem
           onClick={() => setCurrentPage("checkin")}
-          ItemSrc="/public/images/location.svg"
+          ItemSrc="./images/location.svg"
           ItemAlt="チェックイン管理"
         />
         <MenuItem
           onClick={() => setCurrentPage("checkinfo")}
-          ItemSrc="/public/images/bell.svg"
+          ItemSrc="./images/bell.svg"
           ItemAlt="お知らせ"
         />
         <MenuItem
           onClick={() => setCurrentPage("setting")}
-          ItemSrc="/public/images/gear.svg"
+          ItemSrc="./images/gear.svg"
           ItemAlt="設定*中身なし"
         />
         <MenuItem
           onClick={() => setCurrentPage("search")}
-          ItemSrc="/public/images/glass.svg"
+          ItemSrc="./images/glass.svg"
           ItemAlt="探す"
         />
         {allowedEmails.includes(userInfo.email) && (
           <MenuItem
             onClick={() => setCurrentPage("admin")}
-            ItemSrc="/public/images/gear.svg"
+            ItemSrc="./images/gear.svg"
             ItemAlt="管理者"
           />
         )}

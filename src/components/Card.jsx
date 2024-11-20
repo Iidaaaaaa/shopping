@@ -9,7 +9,7 @@ const Card = ({ CardTitle, CardText, CardBtnText, CardScore, CardImage }) => {
         <div className="relative">
           <img className="w-[320px]" src={CardImage} alt={CardTitle} />
           <div className="absolute flex items-center h-5 p-1 bg-white bottom-10 left-2">
-            <img className="mr-1" src="/images/walk2.svg" alt="icon" />
+            <img className="mr-1" src="./images/walk2.svg" alt="icon" />
             <p className="text-sm">{CardScore}</p>
           </div>
           <p className="absolute flex items-center h-6 p-1 text-xl bg-white bottom-3 left-2">

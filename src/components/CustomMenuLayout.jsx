@@ -61,7 +61,7 @@ const CustomMenuLayout = ({ setCurrentPage }) => {
             onClick={() => setCurrentPage("Menu")}
             className="flex pb-3 pt-14"
           >
-            <img src="/public/images/angle-left.svg" alt="右矢印" />
+            <img src="./images/angle-left.svg" alt="右矢印" />
             <p className="mx-auto text-white">管理者ページ</p>
           </div>
         </div>
@@ -92,7 +92,7 @@ const CustomMenuLayout = ({ setCurrentPage }) => {
                 ) : (
                   <>
                     <img
-                      src="/public/images/imageSelect.svg"
+                      src="./images/imageSelect.svg"
                       alt="画像アイコン"
                       className="w-12 h-12 mb-2"
                     />

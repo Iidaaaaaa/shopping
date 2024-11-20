@@ -1,16 +1,15 @@
 import React from "react";
-import CheckInContent from "./CheckinContent";
 const Setting = ({ setCurrentPage }) => {
   return (
     <div>
-      <div className="bg-customBg w-full">
+      <div className="w-full bg-customBg">
         <div className="max-w-xs mx-auto">
           <div
             onClick={() => setCurrentPage("CheckInfo")}
-            className="pt-14 pb-3 flex "
+            className="flex pb-3 pt-14 "
           >
-            <img src="/public/images/angle-left.svg" alt="右矢印" />
-            <p className=" mx-auto text-white">設定</p>
+            <img src="./images/angle-left.svg" alt="右矢印" />
+            <p className="mx-auto text-white ">設定</p>
           </div>
         </div>
       </div>

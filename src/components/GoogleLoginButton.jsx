@@ -97,7 +97,7 @@ const GoogleLoginButton = ({ setCurrentPage, setUserInfo }) => {
   return (
     <TopBtn
       BtnText={"Googleでログイン"}
-      AppImage={"/public/images/Google.png"}
+      AppImage={"./images/Google.png"}
       onClick={handleGoogleLogin}
     />
   );

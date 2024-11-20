@@ -72,19 +72,19 @@ const Search = ({ setCurrentPage }) => {
 
   return (
     <div className="min-h-screen">
-      <div className="bg-customBg w-full">
+      <div className="w-full bg-customBg">
         <div className="max-w-xs mx-auto">
           <div
             onClick={() => setCurrentPage("CheckInfo")}
-            className="pt-14 pb-3 flex"
+            className="flex pb-3 pt-14"
           >
-            <img src="/public/images/angle-left.svg" alt="右矢印" />
+            <img src="./images/angle-left.svg" alt="右矢印" />
             <p className="mx-auto text-white">探す</p>
           </div>
         </div>
       </div>
       {/* Search Input */}
-      <div className="max-w-xs mx-auto mt-6 relative">
+      <div className="relative max-w-xs mx-auto mt-6">
         <input
           className="w-[316px] h-9 bg-[#eaeaea] rounded-[9px] pl-3 pr-10"
           type="text"
@@ -94,7 +94,7 @@ const Search = ({ setCurrentPage }) => {
         />
         {keyword ? (
           <button
-            className="absolute top-2 right-4 text-gray-500"
+            className="absolute text-gray-500 top-2 right-4"
             onClick={clearKeyword}
           >
             x
@@ -116,7 +116,7 @@ const Search = ({ setCurrentPage }) => {
             filteredCards.map((card) => (
               <div
                 key={card.id}
-                className="max-w-xs mt-6 mx-auto rounded-md shadow-lg pb-5"
+                className="max-w-xs pb-5 mx-auto mt-6 rounded-md shadow-lg"
               >
                 <div className="relative">
                   <img
@@ -124,22 +124,22 @@ const Search = ({ setCurrentPage }) => {
                     src={card.image}
                     alt={card.title}
                   />
-                  <div className="absolute bottom-10 left-2 flex items-center bg-white p-1 h-5">
+                  <div className="absolute flex items-center h-5 p-1 bg-white bottom-10 left-2">
                     <img className="mr-1" src="/images/walk2.svg" alt="icon" />
                     <p className="text-sm">{card.score}</p>
                   </div>
-                  <p className="text-xl absolute bottom-3 left-2 flex items-center bg-white p-1 h-6">
+                  <p className="absolute flex items-center h-6 p-1 text-xl bg-white bottom-3 left-2">
                     {card.title}
                   </p>
                 </div>
                 <div className="px-4">
-                  <p className=" pt-2 line-clamp-3">{card.text}</p>
-                  <div className="mt-4 flex items-center">
+                  <p className="pt-2  line-clamp-3">{card.text}</p>
+                  <div className="flex items-center mt-4">
                     <div className="flex flex-wrap gap-2">
-                      <button className="bg-yellow-500 py-1 px-3 rounded-full flex items-center">
+                      <button className="flex items-center px-3 py-1 bg-yellow-500 rounded-full">
                         <span className="text-white">{card.btnText}</span>
                       </button>
-                      <button className="bg-yellow-500 py-1 px-3 rounded-full flex items-center">
+                      <button className="flex items-center px-3 py-1 bg-yellow-500 rounded-full">
                         <span className="text-white">{card.purpose}</span>
                       </button>
                     </div>
@@ -162,31 +162,31 @@ const Search = ({ setCurrentPage }) => {
           <h3 className="text-[#513C38] font-bold text-xl">交通手段で探す</h3>
           <div className="flex flex-wrap gap-2 mt-3">
             <button
-              className="bg-yellow-500 py-1 px-3 rounded-full flex items-center"
+              className="flex items-center px-3 py-1 bg-yellow-500 rounded-full"
               onClick={() => handleCategoryClick("電車")}
             >
-              <img className="mr-1" src="/public/images/dia.svg" alt="" />
+              <img className="mr-1" src="./images/dia.svg" alt="" />
               <span className="text-white">電車</span>
             </button>
             <button
-              className="bg-yellow-500 py-1 px-3 rounded-full flex items-center"
+              className="flex items-center px-3 py-1 bg-yellow-500 rounded-full"
               onClick={() => handleCategoryClick("徒歩")}
             >
-              <img className="mr-1" src="/public/images/dia.svg" alt="" />
+              <img className="mr-1" src="./images/dia.svg" alt="" />
               <span className="text-white">徒歩</span>
             </button>
             <button
-              className="bg-yellow-500 py-1 px-3 rounded-full flex items-center"
+              className="flex items-center px-3 py-1 bg-yellow-500 rounded-full"
               onClick={() => handleCategoryClick("バイク")}
             >
-              <img className="mr-1" src="/public/images/dia.svg" alt="" />
+              <img className="mr-1" src="./images/dia.svg" alt="" />
               <span className="text-white">バイク</span>
             </button>
             <button
-              className="bg-yellow-500 py-1 px-3 rounded-full flex items-center"
+              className="flex items-center px-3 py-1 bg-yellow-500 rounded-full"
               onClick={() => handleCategoryClick("バス")}
             >
-              <img className="mr-1" src="/public/images/dia.svg" alt="" />
+              <img className="mr-1" src="./images/dia.svg" alt="" />
               <span className="text-white">バス</span>
             </button>
           </div>
@@ -195,33 +195,33 @@ const Search = ({ setCurrentPage }) => {
       {keyword === "" && (
         <div className="max-w-xs mx-auto mt-12">
           <h3 className="text-[#513C38] font-bold text-xl">目的で探す</h3>
-          <div className="flex flex-wrap gap-x-2 gap-y-3 mt-3">
+          <div className="flex flex-wrap mt-3 gap-x-2 gap-y-3">
             <button
-              className="bg-yellow-500 py-1 px-3 rounded-full flex items-center"
+              className="flex items-center px-3 py-1 bg-yellow-500 rounded-full"
               onClick={() => handleCategoryClick("飲食店")}
             >
-              <img className="mr-1" src="/public/images/dia.svg" alt="" />
+              <img className="mr-1" src="./images/dia.svg" alt="" />
               <span className="text-white">飲食店</span>
             </button>
             <button
-              className="bg-yellow-500 py-1 px-3 rounded-full flex items-center"
+              className="flex items-center px-3 py-1 bg-yellow-500 rounded-full"
               onClick={() => handleCategoryClick("歴史")}
             >
-              <img className="mr-1" src="/public/images/dia.svg" alt="" />
+              <img className="mr-1" src="./images/dia.svg" alt="" />
               <span className="text-white">歴史</span>
             </button>
             <button
-              className="bg-yellow-500 py-1 px-3 rounded-full flex items-center"
+              className="flex items-center px-3 py-1 bg-yellow-500 rounded-full"
               onClick={() => handleCategoryClick("サブカルチャー")}
             >
-              <img className="mr-1" src="/public/images/dia.svg" alt="" />
+              <img className="mr-1" src="./images/dia.svg" alt="" />
               <span className="text-white">サブカルチャー</span>
             </button>
             <button
-              className="bg-yellow-500 py-1 px-3 rounded-full flex items-center"
+              className="flex items-center px-3 py-1 bg-yellow-500 rounded-full"
               onClick={() => handleCategoryClick("祭り・イベント")}
             >
-              <img className="mr-1" src="/public/images/dia.svg" alt="" />
+              <img className="mr-1" src="./images/dia.svg" alt="" />
               <span className="text-white">祭り・イベント</span>
             </button>
           </div>

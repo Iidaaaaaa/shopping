@@ -13,7 +13,7 @@ const MapInfo = ({ title, score, text, img }) => {
       <div className="max-w-xs mx-auto text-[#513c38]">
         <h1 className="mt-6 text-2xl ">{title}</h1>
         <div className="flex items-center mt-1">
-          <img className="mr-1" src="/public/images/walk2.svg" alt="記録" />
+          <img className="mr-1" src="./images/walk2.svg" alt="記録" />
           <p>{score}</p>
         </div>
         <img className="mt-6" src={img} alt={title} />

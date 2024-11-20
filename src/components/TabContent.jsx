@@ -35,18 +35,18 @@ const TabContent = ({ activeTab }) => {
   }
 
   return (
-    <div className="mt-10 max-w-xs mx-auto">
+    <div className="max-w-xs mx-auto mt-10">
       <div>
         <ImageComponent src={activeData.imageUrl} alt={activeData.storeName} />
         <div className="flex items-center">
           <img
             className="mr-1"
-            src="/public/images/walk2.svg"
+            src="./images/walk2.svg"
             alt={activeData.storeName}
           />
           <p className="text-sm">{activeData.score}</p>
         </div>
-        <h2 className="text-xl mb-3">{activeData.storeName}</h2>
+        <h2 className="mb-3 text-xl">{activeData.storeName}</h2>
         <p className="text-sm mb-5 leading-[25px]">{activeData.description}</p>
         <div className="flex items-center mb-14">
           {activeData.tags &&

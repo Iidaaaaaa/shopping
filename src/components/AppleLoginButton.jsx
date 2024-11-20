@@ -28,7 +28,7 @@ const AppleLoginButton = ({ setCurrentPage, setUserInfo }) => {
   return (
     <TopBtn
       BtnText={"Appleでログイン"}
-      AppImage={"/public/images/apple.svg"}
+      AppImage={"./images/apple.svg"}
       onClick={handleAppleLogin}
     />
   );
